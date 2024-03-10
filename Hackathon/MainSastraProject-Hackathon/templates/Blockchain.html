@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome Home Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <!-- Custom CSS -->
+        <style>
+    /* Custom CSS Styles */
+    body {
+      padding-top: 50px;
+    }
+    .jumbotron {
+      background-image: url("{{ url_for('static',filename='./Img/bg.jpg')}}");
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+    }
+    .jump-bg{
+        background-image: url("{{ url_for('static',filename='./Img/bg.jpg')}}");
+        width:100%;
+        height:500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .feature-box{
+        width:200px;
+        height:100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .feature-box h2,p{
+        text-align: center;
+    }
+    i[class='material-icons']{
+        color: red;
+        font-size: 3rem;
+    }
+ 
+
+section#about {
+  padding: 50px 0;
+}
+
+section#about h2 {
+  margin-bottom: 20px;
+}
+
+        </style>
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Bank Ether</a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('Dashboard')}}">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('Tranactions')}}">Tranactions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./Login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url_for('create_new_user')}}">New</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="jumbotron jump-bg">
+            <div class="container ">
+                <h1 class="display-4">Welcome to Our Website!</h1>
+                <p class="lead">
+                    We provide top-notch services to meet all your needs.
+                </p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+        </div>
+        <section id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 feature-box">
+                        <i class="material-icons">laptop</i>
+                        <h3>Responsive 24/7</h3>
+                        <p>
+                            Our website is fully responsive, ensuring a seamless experience across all devices.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 feature-box">
+                        <i class="material-icons">lock_outline</i>
+                        <h3>Security</h3>
+                        <p>
+                            Customize your experience with our flexible and easy-to-use platform.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 feature-box">
+                        <i class="material-icons">handshake</i>
+                        <h3>Customer Support</h3>
+                        <p>
+                            We're here for you every step of the way. Contact our friendly support team for assistance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- login/signup -->
+        
+
+
+        <section id="about">
+            <div class="container">
+                <h2>About XYZ Bank</h2>
+                <p>
+                    Welcome to XYZ Bank, your trusted financial partner. We have been serving our customers for over 50 years, offering a wide range of banking services tailored to meet your financial needs.
+                </p>
+                <p>
+                    At XYZ Bank, we are committed to providing exceptional customer service and innovative solutions to help you achieve your financial goals. Whether you are looking for a simple checking account, a mortgage, or investment advice, our team of experienced professionals is here to assist you every step of the way.
+                </p>
+                <p>
+                    Our mission is to build long-lasting relationships with our customers based on trust, integrity, and mutual respect. We believe in transparency and accountability, and we strive to exceed your expectations in everything we do.
+                </p>
+                <p>
+                    Thank you for choosing XYZ Bank. We look forward to serving you and helping you secure a brighter financial future.
+                </p>
+            </div>
+        </section>
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+             const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+        </script>
+    </body>
+</html>
